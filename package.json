@@ -1,0 +1,15 @@
+{
+  "name": "firebase-functions-next-example",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "James Hegedus",
+  "repository": "https://github.com/jthegedus/firebase-functions-next-example.git",
+  "scripts": {
+    "prestart": "yarn build-next && yarn build-firebase",
+    "start": "firebase serve",
+    "build-next": "cd \"app\" && yarn && yarn build",
+    "build-firebase": "cd \"functions\" && yarn",
+    "predeploy": "yarn build-next && yarn build-firebase",
+    "deploy": "firebase deploy"
+  }
+}
