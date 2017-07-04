@@ -5,10 +5,11 @@
   "author": "James Hegedus",
   "repository": "https://github.com/jthegedus/firebase-functions-next-example.git",
   "scripts": {
-    "prestart": "yarn build-next && yarn build-firebase",
-    "start": "firebase serve",
-    "build-next": "cd \"app\" && yarn && yarn build",
-    "build-firebase": "cd \"functions\" && yarn",
+    "next-dev": "cd \"src/app\" && yarn && yarn dev",
+    "prenext-dev-firebase": "yarn build-next && yarn build-firebase",
+    "next-dev-firebase": "firebase serve",
+    "build-next": "cd \"src/app\" && yarn && yarn build",
+    "build-firebase": "cd \"src/functions\" && yarn",
     "predeploy": "yarn build-next && yarn build-firebase",
     "deploy": "firebase deploy"
   }
