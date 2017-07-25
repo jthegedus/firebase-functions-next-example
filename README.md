@@ -1,7 +1,7 @@
 # Next.js SSR app on Cloud Functions for Firebase with Firebase Hosting
 Host a Next.js SSR React app on Cloud Functions for Firebase with Firebase Hosting.
 
-Here is the accompanying [Medium Post]()
+Here is the accompanying [Medium Post](https://medium.com/@jthegedus/next-js-on-cloud-functions-for-firebase-with-firebase-hosting-7911465298f2)
 
 ## TLDR;
 Host your SSR Next.js app on Cloud Functions enabling a low-cost, auto-scaling SSR app experience leveraging Firebase's sweet developer experience.
@@ -15,7 +15,7 @@ we can use:
 
 [Next.js](https://github.com/zeit/next.js/) can then be used to achieve SSR React with Hot-Module Reloading, server and client-side routing, route level code-splitting, route prefetching and more!
 
-A number of issues with Hosting SSR on Firebase were overcome with this method. Please refer to the [Medium Post]() before creating issues here.
+A number of issues with Hosting SSR on Firebase were overcome with this method. Please refer to the [Medium Post](https://medium.com/@jthegedus/next-js-on-cloud-functions-for-firebase-with-firebase-hosting-7911465298f2) before creating issues here.
 
 ## Installation
 ```bash
