@@ -17,7 +17,7 @@ cd firebase-functions-next-example
 yarn install
 ```
 
-The following commands all install dependencies as a precaution. Due to Node package managers all offering caching I've default to this method for now. If using an older version of a package manager without caching, remove the `pre` scripts and ensure to run `yarn install` beforehand
+The following commands all install dependencies as a precaution. Due to Node package managers all offering caching in their `stable` builds now I've default to this method. If using an older version of a package manager without caching, remove the `pre` scripts and ensure to run `yarn install` beforehand
 
 ## Next.js Development
 ```shell
