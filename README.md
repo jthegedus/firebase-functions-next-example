@@ -10,9 +10,6 @@ Firebase Hosting can [rewrite all routes to a Cloud Function](https://firebase.g
 
 A number of issues with Hosting SSR on Firebase were overcome with this method. Please refer to the [Medium Post]() before creating issues here.
 
-## A note on Code Compatibility
-Everything was tested on Ubuntu 16.04 & Windows 10 with [Bash on Ubuntu on Windows](https://msdn.microsoft.com/en-au/commandline/wsl/about). If you wish for Windows native support please [submit an issue](https://github.com/jthegedus/firebase-functions-next-example/issues/new) so we can work on a Windows branch. Please report any macOS errors as I do not have access to a device to test. [My development environment can be found here](https://github.com/jthegedus/dotfiles).
-
 ## Installation
 ```
 git clone https://github.com/jthegedus/firebase-functions-next-example
@@ -37,3 +34,6 @@ yarn serve
 yarn deploy
 ```
 N.B.: You will need to connect the project to your Firebase project. Edit the name in .firebaserc or run `firebase init` and choose not to override any files.
+
+## A note on Code Compatibility
+Everything was tested on Ubuntu 16.04 & Windows 10 with [Bash on Ubuntu on Windows](https://msdn.microsoft.com/en-au/commandline/wsl/about). If you wish for Windows native support please [submit an issue](https://github.com/jthegedus/firebase-functions-next-example/issues/new) so we can work on a Windows branch. Please report any macOS errors as I do not have access to a device to test. [My development environment can be found here](https://github.com/jthegedus/dotfiles).
