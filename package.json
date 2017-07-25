@@ -1,6 +1,7 @@
 {
   "name": "firebase-functions-next-example",
   "version": "1.0.0",
+  "description": "Host Next.js SSR app on Firebase Cloud Functions with Firebase Hosting redirects.",
   "license": "MIT",
   "author": "James Hegedus",
   "repository": "https://github.com/jthegedus/firebase-functions-next-example.git",

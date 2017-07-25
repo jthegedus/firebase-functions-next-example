@@ -2,7 +2,7 @@ import Header from "./Header"
 
 const App = ({ children }) =>
   <main>
-    <Header pathname={"test"} />
+    <Header />
     {children}
   </main>
 
