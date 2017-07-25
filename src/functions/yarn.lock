@@ -1641,17 +1641,18 @@ find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-firebase-admin@~4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/firebase-admin/-/firebase-admin-4.2.1.tgz#91794bfc214ee21decc765d308411166a05c0b20"
+firebase-admin@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/firebase-admin/-/firebase-admin-5.0.1.tgz#96deb320970844045b970ec3eb8da9034c72ad4c"
   dependencies:
     "@types/jsonwebtoken" "^7.1.33"
     faye-websocket "0.9.3"
     jsonwebtoken "7.1.9"
+    node-forge "0.7.1"
 
-firebase-functions@^0.5.7:
-  version "0.5.8"
-  resolved "https://registry.yarnpkg.com/firebase-functions/-/firebase-functions-0.5.8.tgz#b8def16a6f9e777046c1bf303b3d08adb9cf5c29"
+firebase-functions@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/firebase-functions/-/firebase-functions-0.6.0.tgz#e0e30b744fd1b86f1e24089225d29a4a8e64ab54"
   dependencies:
     "@types/express" "^4.0.33"
     "@types/jsonwebtoken" "^7.1.32"
@@ -2549,6 +2550,10 @@ node-fetch@^1.0.1:
   dependencies:
     encoding "^0.1.11"
     is-stream "^1.0.1"
+
+node-forge@0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.7.1.tgz#9da611ea08982f4b94206b3beb4cc9665f20c300"
 
 node-libs-browser@^2.0.0:
   version "2.0.0"
