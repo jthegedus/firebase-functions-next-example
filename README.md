@@ -6,7 +6,7 @@ Here is the accompanying [Medium Post]()
 ## TLDR;
 Host your SSR Next.js app on Cloud Functions enabling a low-cost, auto-scaling SSR app experience leveraging Firebase's sweet developer experience.
 
-Firebase Hosting can [rewrite routes to a Cloud Function](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites) that serves our Server-side Rendered Next.js app. Using a rewrite rule that catches ALL routes we can then host our SSR app on our Firebase Hosting URL instead of the Firebase Cloud Function URL.
+Firebase Hosting can [rewrite routes to a Cloud Function](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites) that serves our Server-side Rendered Next.js app. Using a rewrite rule that catches **ALL** routes we can then host our SSR app on our Firebase Hosting URL instead of the Firebase Cloud Function URL.
 
 instead of:
 `https://us-central1-<project-name>.cloudfunctions.net/<function-name>`
