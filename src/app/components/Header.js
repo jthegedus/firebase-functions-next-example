@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export default ({ pathname }) =>
+export default ({ pathname }) => (
   <header>
     <Link href="/">
       <a className={pathname === "/" && "is-active"}>Home</a>
@@ -9,3 +9,4 @@ export default ({ pathname }) =>
       <a className={pathname === "/about" && "is-active"}>About</a>
     </Link>
   </header>
+)

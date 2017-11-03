@@ -1,19 +1,38 @@
 {
   "name": "firebase-functions-next-example",
   "version": "1.0.0",
-  "description": "Host Next.js SSR app on Firebase Cloud Functions with Firebase Hosting redirects.",
+  "description":
+    "Host Next.js SSR app on Firebase Cloud Functions with Firebase Hosting redirects.",
   "license": "MIT",
   "author": "James Hegedus",
-  "repository": "https://github.com/jthegedus/firebase-functions-next-example.git",
+  "repository":
+    "https://github.com/jthegedus/firebase-functions-next-example.git",
   "scripts": {
-    "install": "yarn build-all",
-    "next": "yarn build-firebase && cd \"src/app\" && yarn && yarn dev",
-    "preserve": "yarn build-all",
-    "serve": "firebase serve",
-    "predeploy": "yarn build-all",
+    "prebuild": "rimraf \"dist/functions\"",
+    "build": "yarn build-functions && yarn build-app",
+    "postbuild": "cd \"dist/functions\" && yarn",
+    "build-app": "cd \"src/app\" && yarn build",
+    "build-functions":
+      "babel \"src/functions\" --out-dir \"dist/functions\" --copy-files --ignore \"node_modules\"",
+    "predeploy": "yarn build",
     "deploy": "firebase deploy",
-    "build-all": "yarn build-next && yarn build-firebase",
-    "build-next": "cd \"src/app\" && yarn && yarn build",
-    "build-firebase": "cd \"src/functions\" && yarn"
+    "format": "prettier --write \"**/**{.js, .json}\"",
+    "postinstall": "yarn install-app && yarn install-functions",
+    "install-app": "cd \"src/app\" && yarn",
+    "install-functions": "cd \"src/functions\" && yarn",
+    "next": "cd \"src/app\" && yarn dev",
+    "preserve": "yarn build",
+    "serve": "firebase serve"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.1",
+    "prettier": "^1.7.0",
+    "rimraf": "^2.6.2"
+  },
+  "lint-staged": {
+    "*.{js,json,css}": ["prettier --write", "git add"]
   }
 }
