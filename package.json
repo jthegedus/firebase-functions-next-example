@@ -16,11 +16,11 @@
       "babel \"src/functions\" --out-dir \"dist/functions\" --copy-files --ignore \"node_modules\"",
     "predeploy": "yarn build",
     "deploy": "firebase deploy",
-    "format": "prettier --write \"**/**{.js, .json}\"",
+    "format": "prettier --write \"**/**.{js,json,css}\"",
     "postinstall": "yarn install-app && yarn install-functions",
     "install-app": "cd \"src/app\" && yarn",
     "install-functions": "cd \"src/functions\" && yarn",
-    "next": "cd \"src/app\" && yarn dev",
+    "dev": "cd \"src/app\" && yarn dev",
     "preserve": "yarn build",
     "serve": "firebase serve"
   },
@@ -29,7 +29,7 @@
     "babel-preset-env": "^1.6.0",
     "husky": "^0.14.3",
     "lint-staged": "^4.2.1",
-    "prettier": "^1.7.0",
+    "prettier": "^1.9.2",
     "rimraf": "^2.6.2"
   },
   "lint-staged": {
