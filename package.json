@@ -1,38 +1,31 @@
 {
-  "name": "firebase-functions-next-example",
+  "name": "test",
   "version": "1.0.0",
-  "description":
-    "Host Next.js SSR app on Firebase Cloud Functions with Firebase Hosting redirects.",
+  "main": "index.js",
   "license": "MIT",
-  "author": "James Hegedus",
-  "repository":
-    "https://github.com/jthegedus/firebase-functions-next-example.git",
-  "scripts": {
-    "prebuild": "rimraf \"dist/functions\"",
-    "build": "yarn build-functions && yarn build-app",
-    "postbuild": "cd \"dist/functions\" && yarn",
-    "build-app": "cd \"src/app\" && yarn build",
-    "build-functions":
-      "babel \"src/functions\" --out-dir \"dist/functions\" --copy-files --ignore \"node_modules\"",
-    "predeploy": "yarn build",
-    "deploy": "firebase deploy",
-    "format": "prettier --write \"**/**.{js,json,css}\"",
-    "postinstall": "yarn install-app && yarn install-functions",
-    "install-app": "cd \"src/app\" && yarn",
-    "install-functions": "cd \"src/functions\" && yarn",
-    "dev": "cd \"src/app\" && yarn dev",
-    "preserve": "yarn build",
-    "serve": "firebase serve"
+  "dependencies": {
+    "firebase-admin": "^5.6.0",
+    "firebase-functions": "^0.8.0",
+    "next": "^4.2.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^4.2.1",
+    "@babel/cli": "^7.0.0-beta.36",
+    "@babel/core": "^7.0.0-beta.36",
+    "@babel/preset-env": "^7.0.0-beta.36",
+    "cpx": "^1.5.0",
+    "firebase-tools": "^3.16.0",
     "prettier": "^1.9.2",
     "rimraf": "^2.6.2"
   },
-  "lint-staged": {
-    "*.{js,json,css}": ["prettier --write", "git add"]
+  "scripts": {
+    "prebuild": "rimraf dist/functions && rimraf dist/public",
+    "build": "yarn build-functions && yarn build-app && yarn build-public",
+    "postbuild": "cd dist/functions && yarn",
+    "build-app": "next build src/app",
+    "build-functions": "babel \"src/functions\" --out-dir \"dist/functions\"",
+    "postbuild-functions": "cpx *{package.json,yarn.lock} dist/functions/",
+    "build-public": "cpx src/public/**/*.* dist/public -C"
   }
 }
