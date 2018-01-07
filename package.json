@@ -1,6 +1,6 @@
 {
   "name": "test",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
@@ -25,8 +25,7 @@
     "serve": "",
     "deploy-app": "yarn firebase deploy --only hosting,functions:app",
     "deploy-functions": "yarn firebase deploy --only functions:greetings",
-    "deploy-full": "yarn firebase deploy",
-
+    "deploy-all": "yarn firebase deploy",
     "clean": "rimraf dist/functions && rimraf dist/public",
     "build-public": "cpx src/public/**/*.* dist/public -C",
     "build-funcs": "babel \"src/functions\" --out-dir \"dist/functions\"",

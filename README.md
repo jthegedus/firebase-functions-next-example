@@ -2,11 +2,13 @@
 
 Host a Next.js SSR React app on Cloud Functions for Firebase with Firebase Hosting.
 
-Here is the accompanying [Medium Post](https://medium.com/@jthegedus/next-js-on-cloud-functions-for-firebase-with-firebase-hosting-7911465298f2)
+~~Here is the accompanying [Medium Post](https://medium.com/@jthegedus/next-js-on-cloud-functions-for-firebase-with-firebase-hosting-7911465298f2)~~ A new post is being written to describe the new project structure, Firebase partial deployments, Firebase support of pre/post-deploy hooks and what problems these new features solve.
 
-## TLDR;
+## Why?
 
 Host your SSR Next.js app on Cloud Functions enabling a low-cost, auto-scaling SSR app experience leveraging Firebase's sweet developer experience.
+
+## How?
 
 Firebase Hosting can [rewrite routes to a Cloud Function](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites) that serves our Server-side Rendered Next.js app. Using a rewrite rule that catches **ALL** routes we can then host our SSR app on our Firebase Hosting URL instead of the Firebase Cloud Function URL.
 
@@ -30,28 +32,64 @@ cd firebase-functions-next-example
 yarn install
 ```
 
-The following commands all install dependencies as a precaution. Due to Node package managers all offering caching in their `stable` builds now I've default to this method. If using an older version of a package manager without caching, remove the `pre` scripts and ensure to run `yarn install` beforehand
+## Login to Firebase CLI
+
+This is used as a dev-dependency instead of a global install. I've found this to be a much nicer dev experience.
+
+```bash
+yarn fblogin
+```
 
 ## Next.js Development
+
+Standard Next.js development with Hot-module Reloading etc
 
 ```bash
 yarn dev
 ```
 
-## Local Firebase Hosting
+## Local Testing
+
+Unfortunately I have been unable to get any combination of
 
 ```bash
-yarn serve
+firebase serve --only functions,hosting
 ```
+
+to work as expected. [This issue is where solutions are being explored](https://github.com/firebase/firebase-tools/issues/535) and they will be shared here and on the [Next.js repo's similar issue](https://github.com/zeit/next.js/issues/3167) when discovered.
+
+In the meantime you'll just have to do a full deployment and test online. The new project structure of v2.0.0 and partial deployments reduces the deployment time significantly so this is not too bad. I'm continually looking into a solution to this.
 
 ## Deploy to Firebase
 
+You will need to connect the project to your Firebase project. Edit the name in .firebaserc or run `firebase init` and choose not to override any files.
+
+### Deploy Hosting resources and the rewrite Cloud Function
+
 ```bash
-yarn deploy
+yarn deploy-app
 ```
 
-N.B.: You will need to connect the project to your Firebase project. Edit the name in .firebaserc or run `firebase init` and choose not to override any files.
+### Deploy functions not used for the SSR
+
+Deploy all functions specified in the function group. Edit this script to add more function groups. - see [Partial deploys docs](https://firebase.google.com/docs/cli/#partial_deploys) for how to use function groups.
+
+```bash
+yarn deploy-funcs
+```
+
+### Deploy everything to Firebase
+
+```bash
+yarn deploy-all
+```
+
+## Clean `dist` Folder
+
+```bash
+yarn clean
+```
 
 ## A note on Code Compatibility
 
-Everything was tested on Ubuntu 17.04 with Bash. This should work on [Bash on Ubuntu on Windows](https://msdn.microsoft.com/en-au/commandline/wsl/about) without any changes. If you wish for Windows native support please [submit an issue](https://github.com/jthegedus/firebase-functions-next-example/issues/new) so we can work on a Windows branch. Please report any macOS errors as I do not have access to a device to test. [My development environment can be found here](https://github.com/jthegedus/dotfiles).
+Everything was tested on Ubuntu 17.04 with Bash. This should work on [Bash on Ubuntu on Windows](https://msdn.microsoft.com/en-au/commandline/wsl/about) without any changes. If you wish for Windows native support please [submit an issue](https://github.com/jthegedus/firebase-functions-next-example/issues/new) so we can work on Windows compatibility. Please report any macOS errors as I do not have access to a device to test. [My development environment can be found here](https://github.com/jthegedus/dotfiles).
