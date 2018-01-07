@@ -1,13 +1,17 @@
 {
   "hosting": {
     "public": "dist/public",
-
     "rewrites": [
       {
         "source": "**/**",
-        "function": "next"
+        "function": "app-app"
       }
-    ]
+    ],
+    "predeploy": "yarn run cpx src/public/**/*.* dist/public -C"
   },
-  "functions": { "source": "dist/functions" }
+  "functions": {
+    "source": "dist/functions",
+    "predeploy":
+      "babel \"src/functions\" --out-dir \"dist/functions\" && cpx *{package.json,yarn.lock} \"dist/functions/\" && cd \"dist/functions\" && yarn"
+  }
 }
