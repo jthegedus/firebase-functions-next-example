@@ -20,14 +20,18 @@
     "rimraf": "^2.6.2"
   },
   "scripts": {
-    "dev": "",
+    "fblogin": "yarn firebase login",
+    "dev": "next src/app",
     "serve": "",
     "deploy-app": "yarn firebase deploy --only hosting,functions:app",
-    "deploy-functions": "",
-    "deploy-all": "yarn deploy-app && yarn deploy-functions",
-    "prebuild": "rimraf dist/functions && rimraf dist/public",
-    "build": "yarn build-functions && yarn build-app && yarn build-public",
-    "postbuild": "cd dist/functions && yarn",
-    "build-app": "next build src/app"
+    "deploy-functions": "yarn firebase deploy --only functions:greetings",
+    "deploy-full": "yarn firebase deploy",
+
+    "clean": "rimraf dist/functions && rimraf dist/public",
+    "build-public": "cpx src/public/**/*.* dist/public -C",
+    "build-funcs": "babel \"src/functions\" --out-dir \"dist/functions\"",
+    "build-app": "next build src/app",
+    "copy-deps": "cpx *{package.json,yarn.lock} \"dist/functions/\"",
+    "install-deps": "cd \"dist/functions\" && yarn"
   }
 }

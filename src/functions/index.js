@@ -1,14 +1,25 @@
-import * as functions from "firebase-functions"
+import { nextApp as next } from "./app/app"
+import { mars } from "./worlds/mars"
+import { jupiter } from "./worlds/jupiter"
 
-import * as nextApp from "./next/app"
-import * as helloWorld from "./helloworld/helloWorld"
+/*
+Namespace application services with function groups.
+Partially deploy namespaces for independent service updates.
+*/
 
-exports.app = {
-  app: functions.https.onRequest(nextApp),
-  // funcs to be deployed with the frontend
+// SSR Next.js app Cloud Function used by Firebase Hosting
+// yarn deploy-app
+const app = {
+  next,
+  // other Hosting dependencies
 }
 
-exports.otherFuncs = {
-  helloWorld: functions.https.onRequest(helloWorld),
+// Mircoservices that make up the Greetings service
+// yarn deploy-functions
+const greetings = {
+  mars,
+  jupiter,
   // other funcs
 }
+
+export { app, greetings }
