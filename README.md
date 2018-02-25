@@ -24,6 +24,10 @@ we can use:
 
 A number of issues with Hosting SSR on Firebase were overcome with this method. Please refer to the [Medium Post](https://medium.com/@jthegedus/next-js-on-cloud-functions-for-firebase-with-firebase-hosting-7911465298f2) before creating issues here.
 
+## Important!
+
+This example uses `firebase-tools` as a devDependency which is run from the `node_modules/.bin/` folder via `yarn`. Yarn will run scripts from either the `package.json` or binary scripts from `node_modules/.bin/`. `npm run` does not check the `.bin` folder for executables, so if you use `npm` you will either have to change the scripts to explicitly run the `firebase` binary from `node_modules/.bin/` or install `firebase-tools` globally and remove it from the devDeps list.
+
 ## Installation
 
 ```bash
