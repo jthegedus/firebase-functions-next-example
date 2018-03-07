@@ -6,7 +6,7 @@
   "dependencies": {
     "firebase-admin": "5.8.1",
     "firebase-functions": "^0.8.1",
-    "next": "^5.0.0",
+    "next": "^5.0.1-canary.11",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
@@ -23,8 +23,7 @@
   "scripts": {
     "fblogin": "yarn firebase login",
     "dev": "next src/app",
-    "serve":
-      "echo \"for details see:\n\thttps://github.com/firebase/firebase-tools/issues/535 \n\thttps://github.com/zeit/next.js/issues/3167\";",
+    "serve": "echo \"for details see:\n\thttps://github.com/firebase/firebase-tools/issues/535 \n\thttps://github.com/zeit/next.js/issues/3167\";",
     "deploy-app": "yarn firebase deploy --only hosting,functions:app",
     "deploy-functions": "yarn firebase deploy --only functions:greetings",
     "deploy-all": "yarn firebase deploy",
