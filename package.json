@@ -6,7 +6,7 @@
   "dependencies": {
     "firebase-admin": "^5.10.0",
     "firebase-functions": "^0.8.1",
-    "next": "^5.0.0",
+    "next": "^5.0.1-canary.14",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
@@ -22,8 +22,8 @@
   },
   "scripts": {
     "fblogin": "yarn firebase login",
-    "dev": "next src/app",
     "preserve": "yarn build-public && yarn build-funcs && yarn build-app && yarn copy-deps && yarn install-deps",
+    "dev": "next \"src/app\"",
     "serve": "NODE_ENV=production firebase serve --only functions,hosting",
     "deploy-app": "yarn firebase deploy --only hosting,functions:app",
     "deploy-functions": "yarn firebase deploy --only functions:greetings",
