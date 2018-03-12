@@ -26,7 +26,9 @@ A number of issues with Hosting SSR on Firebase were overcome with this method. 
 
 ## Important!
 
-This example uses `firebase-tools` as a devDependency which is run from the `node_modules/.bin/` folder via `yarn`. Yarn will run scripts from either the `package.json` or binary scripts from `node_modules/.bin/`. `npm run` does not check the `.bin` folder for executables, so if you use `npm` you will either have to change the scripts to explicitly run the `firebase` binary from `node_modules/.bin/` or install `firebase-tools` globally and remove it from the devDeps list. Have a look [at the Next.js repo's example](https://github.com/zeit/next.js/tree/canary/examples/with-firebase-hosting) for how I recommend using `npm`.
+* This example uses `firebase-tools` as a devDependency which is run from the `node_modules/.bin/` folder via `yarn`. Yarn will run scripts from either the `package.json` or binary scripts from `node_modules/.bin/`. `npm run` does not check the `.bin` folder for executables, so if you use `npm` you will either have to change the scripts to explicitly run the `firebase` binary from `node_modules/.bin/` or install `firebase-tools` globally and remove it from the devDeps list. Have a look [at the Next.js repo's example](https://github.com/zeit/next.js/tree/canary/examples/with-firebase-hosting) for how I recommend using `npm`.
+
+* Ensure you're running Node `6.11.5` as the functions emulator requires this. I recommend [asdf as a version manager](https://github.com/asdf-vm/asdf) and have add an asdf `.tool-versions` file to define the Node runtime.
 
 ## Installation
 
