@@ -26,7 +26,7 @@ A number of issues with Hosting SSR on Firebase were overcome with this method. 
 
 ## Important!
 
-This example uses `firebase-tools` as a devDependency which is run from the `node_modules/.bin/` folder via `yarn`. Yarn will run scripts from either the `package.json` or binary scripts from `node_modules/.bin/`. `npm run` does not check the `.bin` folder for executables, so if you use `npm` you will either have to change the scripts to explicitly run the `firebase` binary from `node_modules/.bin/` or install `firebase-tools` globally and remove it from the devDeps list.
+This example uses `firebase-tools` as a devDependency which is run from the `node_modules/.bin/` folder via `yarn`. Yarn will run scripts from either the `package.json` or binary scripts from `node_modules/.bin/`. `npm run` does not check the `.bin` folder for executables, so if you use `npm` you will either have to change the scripts to explicitly run the `firebase` binary from `node_modules/.bin/` or install `firebase-tools` globally and remove it from the devDeps list. Have a look [at the Next.js repo's example](https://github.com/zeit/next.js/tree/canary/examples/with-firebase-hosting) for how I recommend using `npm`.
 
 ## Installation
 
@@ -54,15 +54,17 @@ yarn dev
 
 ## Local Testing
 
-Unfortunately I have been unable to get any combination of
-
 ```bash
-firebase serve --only functions,hosting
+yarn serve
 ```
 
-to work as expected. [This issue is where solutions are being explored](https://github.com/firebase/firebase-tools/issues/535) and they will be shared here and on the [Next.js repo's similar issue](https://github.com/zeit/next.js/issues/3167) when discovered.
+This finally works now! Note: you must have a valid Firebase project id defined in the `.firebaserc` file as the `serve` command does check that the project exists. I believe this is to do with ensuring the relative routes align with your deployed application as the `<project id>` is used in your URLs.
 
-In the meantime you'll just have to do a full deployment and test online. The new project structure of v2.0.0 and partial deployments reduces the deployment time significantly so this is not too bad. I'm continually looking into a solution to this.
+For those who want to dig deeper into what's actually happening here run this command:
+
+```bash
+yarn serve --debug
+```
 
 ## Deploy to Firebase
 
