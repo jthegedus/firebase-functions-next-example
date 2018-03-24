@@ -35,5 +35,8 @@
     "build-app": "NODE_ENV=production next build \"src/app\"",
     "copy-deps": "cpx \"*{package.json,yarn.lock}\" \"dist/functions\"",
     "install-deps": "cd \"dist/functions\" && yarn"
+  },
+  "prettier": {
+    "trailingComma": "es5"
   }
 }
