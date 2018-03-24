@@ -1,8 +1,16 @@
-# Next.js SSR app on Cloud Functions for Firebase with Firebase Hosting
+<h1 align="center">Next.js SSR app on Cloud Functions for Firebase with Firebase Hosting</h1>
 
+<p align="center">
 Host a Next.js SSR React app on Cloud Functions for Firebase with Firebase Hosting.
+</p>
 
-~~Here is the accompanying [Medium Post](https://medium.com/@jthegedus/next-js-on-cloud-functions-for-firebase-with-firebase-hosting-7911465298f2)~~ A new post is being written to describe the new project structure, Firebase partial deployments, Firebase support of pre/post-deploy hooks and what problems these new features solve.
+<p align="center">
+<s>Here is the accompanying <a href="https://medium.com/@jthegedus/next-js-on-cloud-functions-for-firebase-with-firebase-hosting-7911465298f2">Medium Post</a></s>A new post is being written to describe the new project structure, Firebase partial deployments, Firebase support of pre/post-deploy hooks and what problems these new features solve.
+</p>
+
+<p align="center">
+  <a href="https://github.com/prettier/prettier"><img alt="styled with Prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat" /></a>
+</p>
 
 ## Why?
 
