@@ -38,6 +38,14 @@ A number of issues with Hosting SSR on Firebase were overcome with this method. 
 
 * Ensure you're running Node `6.11.5` as the functions emulator requires this. I recommend [asdf as a version manager](https://github.com/asdf-vm/asdf) and have add an asdf `.tool-versions` file to define the Node runtime.
 
+* If using `_app.js` you may receive the following error on your deployed Cloud Function:
+
+    ```
+    { Error: Cannot find module '@babel/runtime/regenerator'...
+    ```
+    
+    Despite next.js having `@babel/runtime` as a dependency, you must install it as a dependency directly in this project.
+
 ## Installation
 
 ```bash
