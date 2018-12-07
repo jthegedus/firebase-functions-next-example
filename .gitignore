@@ -1,5 +1,6 @@
 ### Project specific
 dist/
+.firebase/
 
 # Created by https://www.gitignore.io/api/web,node,linux,macos,windows
 

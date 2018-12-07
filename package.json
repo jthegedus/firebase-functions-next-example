@@ -1,23 +1,23 @@
 {
   "name": "firebase-functions-nextjs",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "firebase-admin": "^5.12.1",
-    "firebase-functions": "^1.0.4",
-    "next": "^6.0.3",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "firebase-admin": "^6.3.0",
+    "firebase-functions": "^2.1.0",
+    "next": "^7.0.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.42",
-    "@babel/core": "^7.0.0-beta.42",
-    "@babel/preset-env": "^7.0.0-beta.42",
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
     "@firebase/app-types": "^0.3.2",
     "cpx": "^1.5.0",
-    "firebase-tools": "^3.18.6",
-    "prettier": "^1.13.5",
+    "firebase-tools": "^6.1.2",
+    "prettier": "^1.15.3",
     "rimraf": "^2.6.2"
   },
   "scripts": {
