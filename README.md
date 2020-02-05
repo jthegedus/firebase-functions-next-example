@@ -1,3 +1,7 @@
+# 🚨 [deprecated, new example at firebase-gcp-examples](https://github.com/jthegedus/firebase-gcp-examples)
+
+---
+
 <h1 align="center">Next.js SSR app on Cloud Functions for Firebase with Firebase Hosting</h1>
 
 <p align="center">
